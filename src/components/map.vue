@@ -11,25 +11,47 @@ import options from "./img/data-view-config.json";
 import { Cesium } from "mars3d";
 // import "mars3d-cesium/Build/Cesium/Widgets/widgets.css";
 let map: any = null;
+
+let urlarr = [
+  // "http://183.220.144.58:8001/GAJKQ3D/tileset.json",
+  // "http://221.237.199.79:8091/hse/models/new3d/tileset.json",
+  //   "https://demo.zhonghuifang.com/hse/models/new3d/tileset.json",
+  //   "http://140.210.208.8:9999/hse/models/new3d/tileset.json",
+  "http://183.220.144.58:8001/hy3d/tileset.json", //宏源
+  "http://183.220.144.58:8001/jyxcl3d/tileset.json", //久源
+  "http://183.220.144.58:8001/mojia3d/tileset.json", //摩伽
+  "http://183.220.144.58:8001/sx3d/tileset.json", //圣效
+  "http://183.220.144.58:8001/woken3d/tileset.json", //沃肯
+  "http://183.220.144.58:8001/xyd3d/tileset.json", //先易达
+];
 function initmap() {
   map = new mars3d.Map("mars3dContainer", options);
-  loadmodel();
-//   loadbox();
+  forfun();
+  //   loadbox();
+  map.flyToPoint([106.83652, 30.495902, 10], {
+    radius: 10000,
+    duration: 0.5,
+    // pitch: -25,
+  });
 }
 
-function loadmodel() {
+function forfun() {
+  urlarr.forEach((item, index) => {
+    loadmodel(item);
+  });
+}
+function loadmodel(url: string) {
   //   console.log(222, process.env.BASE_URL);
   let tiles3dLayer = new mars3d.layer.TilesetLayer({
-    name: "工厂区域",
-    // url: "http://saasmodel.oss-cn-shanghai.aliyuncs.com/b3dm/%E5%BE%B7%E5%B7%9E%E4%BA%BA%E6%B0%91%E8%AD%A6%E5%AF%9F%E8%AE%AD%E7%BB%83%E5%9F%BA%E5%9C%B0/terra_b3dms/tileset.json",
-    url: "http://183.220.144.58:8001/GAJKQ3D/tileset.json",
+    // name: "工厂区域",
+    url: url,
     luminanceAtZenith: 0.3,
     maximumScreenSpaceError: 20,
-    highlight: { type: "click", color: "#00ffff" },
-    popup: "all",
+    // highlight: { type: "click", color: "#00ffff" },
+    // popup: "all",
   });
   map.addLayer(tiles3dLayer);
-  tiles3dLayer.flyTo({ radius: 2000, duration: 0.5 });
+  //   tiles3dLayermap.flyTo({ radius: 10000, duration: 0.5 });
 }
 
 // function loadbox() {
