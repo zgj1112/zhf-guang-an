@@ -1,0 +1,115 @@
+{
+  "scene": {
+    "center": {
+      "lat": 31.733261528780393,
+      "lng": 120.01750307952551,
+      "alt": 1104,
+      "heading": 0,
+      "pitch": -89
+    },
+    "scene3DOnly": false,
+    "shadows": false,
+    "removeDblClick": true,
+    "sceneMode": 3,
+    "showSun": true,
+    "showMoon": true,
+    "showSkyBox": true,
+    "showSkyAtmosphere": true,
+    "fog": true,
+    "fxaa": true,
+    "requestRenderMode": true,
+    "globe": {
+      "depthTestAgainstTerrain": false,
+      "baseColor": "#546a53",
+      "showGroundAtmosphere": true,
+      "enableLighting": false
+    },
+    "cameraController": {
+      "zoomFactor": 3.0,
+      "minimumZoomDistance": 1,
+      "maximumZoomDistance": 50000000,
+      "enableRotate": true,
+      "enableTranslate": true,
+      "enableTilt": true,
+      "enableZoom": true,
+      "enableCollisionDetection": true,
+      "minimumCollisionTerrainHeight": 15000
+    }
+  },
+  "control": {
+    "homeButton": false,
+    "baseLayerPicker": true,
+    "sceneModePicker": false,
+    "vrButton": false,
+    "fullscreenButton": false,
+    "fullscreenElement": "",
+    "navigationHelpButton": false,
+    "animation": false,
+    "timeline": false,
+    "infoBox": false,
+    "geocoder": false,
+    "geocoderConfig": {
+      "key": [
+        "f2fedb9b08ae13d22f1692cd472d345e",
+        "2e6ca4aeb6867fb637a5bee8333e5d3a"
+      ]
+    },
+    "selectionIndicator": false,
+
+    "defaultContextMenu": true,
+    "mouseDownView": true,
+
+    "distanceLegend": { "left": "0px", "bottom": "2px", "enabled": false }
+  },
+  "terrain": {
+    "url": "//data.mars3d.cn/terrain",
+    "show": false
+  },
+  "basemaps": [
+    {
+      "id": 1040,
+      "name": "黑色底图",
+
+      "type": "tencent",
+      "layer": "custom",
+      "style": "4",
+      "show": false
+    },
+    {
+      "id": 1041,
+      "name": "天地图影像",
+
+      "type": "group",
+      "layers": [
+        {
+          "name": "底图",
+          "type": "tdt",
+          "layer": "img_d",
+          "key": [
+            "65382fed1e9dbf54def7083eafa0f20d",
+            "3e60b50d23af50d45cb2b630899ad093"
+          ]
+        },
+        {
+          "name": "注记",
+          "type": "tdt",
+          "layer": "img_z",
+          "key": [
+            "65382fed1e9dbf54def7083eafa0f20d",
+            "3e60b50d23af50d45cb2b630899ad093"
+          ]
+        }
+      ],
+      "show": true
+    },
+    {
+      "id": 1042,
+      "name": "百度地图",
+
+      "type": "baidu",
+      "layer": "custom",
+      "style": "4",
+      "show": false
+    }
+  ]
+}
