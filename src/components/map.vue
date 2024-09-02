@@ -8,6 +8,7 @@
       :root-style="{ color: 'blue' }"
       style="color: red"
       placement="left"
+      :mask="false"
     >
       <a-checkbox
         v-model:checked="checkall"
